@@ -39,13 +39,19 @@ function populateQuiz(){
   questionSet.forEach(element => {
     var question = document.createElement("h2");
     question.innerHTML = element[0];
-
-    var answer = document.createElement('<input type="text" name="answer'+questionNum+'" id="answer'+questionNum+'" >');
+    var answer = document.createElement("input");
+    answer.setAttribute('type', 'text');
+    answer.setAttribute('name',"answer'+questionNum+'" );   
+    answer.setAttribute('id', "answer'+questionNum+'");
     
-    var button = document.createElement('<input type="button" value="Go for it!" onclick="checkAnswer('+questionNum+')">');
+    var button = document.createElement('input');
+    button.setAttribute('type', 'button');
+    button.setAttribute('value',"Go for it!");   
+    button.setAttribute('onclick', "checkAnswer('+questionNum+')");
     
-    var feedback = document.createElement("<p id='feedback"+questionNum+"></p>");
-
+    var feedback = document.createElement('p');
+    feedback.setAttribute('id',"feedback"+questionNum)
+  
     document.getElementById("quiz-area").appendChild(question);
     document.getElementById("quiz-area").appendChild(answer);
     document.getElementById("quiz-area").appendChild(button);
