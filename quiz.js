@@ -25,6 +25,7 @@ var questionSet = [["What is the capital of Wales?","10ow88p"],["What number are
 
 function checkAnswer(answerNum){
     var response = "You were... ";
+    console.log(document.getElementById("answer"+answerNum));
     if (questionSet[answerNum][1]==hash(document.getElementById("answer"+answerNum).value)){
       response += "CORRECT YOU LEGEND!";
     }
@@ -41,13 +42,13 @@ function populateQuiz(){
     question.innerHTML = element[0];
     var answer = document.createElement("input");
     answer.setAttribute('type', 'text');
-    answer.setAttribute('name',"answer'+questionNum+'" );   
-    answer.setAttribute('id', "answer'+questionNum+'");
+    answer.setAttribute('name',"answer"+questionNum);   
+    answer.setAttribute('id', "answer"+questionNum);
     
     var button = document.createElement('input');
     button.setAttribute('type', 'button');
     button.setAttribute('value',"Go for it!");   
-    button.setAttribute('onclick', "checkAnswer('+questionNum+')");
+    button.setAttribute('onclick', "checkAnswer('"+questionNum+"')");
     
     var feedback = document.createElement('p');
     feedback.setAttribute('id',"feedback"+questionNum)
@@ -55,7 +56,7 @@ function populateQuiz(){
     document.getElementById("quiz-area").appendChild(question);
     document.getElementById("quiz-area").appendChild(answer);
     document.getElementById("quiz-area").appendChild(button);
-
+    document.getElementById("quiz-area").appendChild(feedback);
     questionNum++;
   });
 }
