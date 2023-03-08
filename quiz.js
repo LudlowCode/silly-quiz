@@ -21,7 +21,7 @@ function hash(str) {
     return new Uint32Array([hash])[0].toString(36);
 }
 
-var questionSet = [["What is the capital of Wales?","10ow88p"],["What number are you thinking of between 0 and 100","19g"],["Name the best planet...","1d555p"]];
+var questionSet = [["What is the capital of Wales?","10ow88p"],["What number are you thinking of between 0 and 100","19g"],["Name the best planet...","1d555p", ["What is the 65-year-old Englishman's 4-digit lock combination?","wba7"]]];
 
 function checkAnswer(answerNum){
     var response = "You were... ";
