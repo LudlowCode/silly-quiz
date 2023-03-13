@@ -67,5 +67,5 @@ function incrementPlays(){
   else{
     localStorage.plays=1;
   }
-  document.getElementById("plays").innerHTML = "Games played: "+plays;
+  document.getElementById("plays").innerHTML = "Games played: "+localStorage.plays;
 }
