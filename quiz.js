@@ -59,4 +59,14 @@ function populateQuiz(){
     document.getElementById("quiz-area").appendChild(feedback);
     questionNum++;
   });
+
+  function incrementPlays(){
+    if (localStorage.plays) {
+      localStorage.plays++;
+    }
+    else{
+      localStorage.plays=1;
+    }
+    document.getElementById("plays").innerHTML = "Games played: "+plays;
+  }
 }
