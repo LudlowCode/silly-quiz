@@ -58,6 +58,7 @@ function populateQuiz(){
     document.getElementById("quiz-area").appendChild(button);
     document.getElementById("quiz-area").appendChild(feedback);
     questionNum++;
+    incrementPlays();
   });
 }
 function incrementPlays(){
@@ -67,5 +68,4 @@ function incrementPlays(){
   else{
     localStorage.plays=1;
   }
-  document.getElementById("plays").innerHTML = "Games played: "+localStorage.plays;
 }
